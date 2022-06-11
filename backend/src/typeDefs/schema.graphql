@@ -1,0 +1,34 @@
+# const { gql } = require('apollo-server');
+
+# const fruitsSchema = gql `
+#     type Fruit {
+#         id: ID!
+#         name: String
+#         nutritions: Nutritions
+#     }
+#     type Nutritions {
+#         calories: String
+#         sugar: String
+#     }
+
+#     type Query {
+#         fruits: [Fruit] # retornando um array com todas as frutas
+#         fruit(id: ID!): Fruit # retornando uma fruta a partir de seu id
+#     }
+
+#     type Mutation {
+#         createFruit(fruit: FruitInput): Fruit
+#         updateFruit(id: String, fruit: FruitInput): Fruit
+#         deleteFruit(id: String): Fruit
+#     }
+#     input FruitInput {
+#         name: String
+#         nutritions: NutritionsInput
+#     }
+#     input NutritionsInput {
+#         sugar: String
+#         calories: String
+#     }
+# `
+
+# module.exports = fruitsSchema
